@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <style>
+      *{ padding:0; margin: 0;}
+      .argo-btn:hover{ background-color: #5bc76b !important}
+      .hint{ color: #999; font-size: 13px;}
+      .hint a{ color: #aaa; font-size: 12px;}
+      .hint a:hover{ color: #999; }
+    </style>
+  </head>
+  <body style="padding:0; margin: 0; color: #333; font-size: 14px; line-height: 1.666">
+    <div style="background-color: #c4dfea; background-image: url(http://argo.sysu.edu.cn/n/images/bg.png); padding: 80px 0;">
+      <div style="font-size: 14px; width: 500px; margin: 0 auto;  background: #f8fafa; padding: 25px; border-bottom: 2px solid #ccc;">
+        <img style=" float: right; margin: 10px 15px; " src="http://argo.sysu.edu.cn/avatar/LT" />
+        <p>亲爱的 <span style="color: #111; font-weight: bold; font-size: 20px">{{ userid }}</span> : <br/>
+          我是逸仙时空邮件提醒机器人 ，<br/>
+          {% if new_mail %}
+	  我发现你的邮箱里有<strong>未读</strong>的邮件哦！<br />
+	  你要及时上站查看哟 ～ </p>
+	  {% endif %}
+	  {% if new_board_len > 0 %}
+	  我还知道，你喜欢的版面：
+	  {% for board in update_board %}
+	      {{ board }} <br />
+          {% endfor %}
+	  都有更新呢，快去看看吧！<br />
+	  {% endif %}
+        <a class="argo-btn" style="display: inline-block;  padding: 4px 12px;  background-color: #5bb75b; color: #fff; text-decoration: none; font-size: 14px; margin: 10px auto"  target="_blank" href="http://argo.sysu.edu.cn">上站</a>
+      </div>
+      <div class="hint" style="width: 500px; padding: 25px; margin:0 auto;">
+        逸仙时空 Yat-Sen Channel<br/>
+        <small>立于中大，一个有文化、有理想的社区。</small><br/>
+        <br/>
+        <a href="http://argo.sysu.edu.cn/n/index.html#!setting">取消站内信邮件提醒</a> <br/>
+	忘记密码，请联系 <a target="_blank" href="mailto:sysu_argo@163.com">argo站务组</a><br/>
+	欢迎在微博上面关注我们 <a target="_blank" href="http://weibo.com/argobbs">@中山大学逸仙时空BBS</a> <br/>
+      </div>
+    </div>
+  </body>
+</html>
